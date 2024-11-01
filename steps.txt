@@ -12,12 +12,16 @@ docker-compose logs web
 
 
 
+---------------------
 docker-compose exec web python manage.py migrate
-docker-compose exec web python manage.py migrate
-
 
 creating a superuser for database:
 docker-compose exec web python manage.py createsuperuser
+---------------------
+
+
+
+
 
 login as superuser :--------------
 

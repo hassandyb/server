@@ -4,6 +4,8 @@ services:
 
 
   web:
+    image: adminer
+    restart: always
     build: .
     ports:
       - "8000:8000"
@@ -15,7 +17,7 @@ services:
       - nat
 
   db:
-    image: postgres:16
+    image: postgres:17
     environment:
       POSTGRES_DB: database
       POSTGRES_USER: postgres
