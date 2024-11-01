@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'transcendence.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'database',  # Change to your database name
+        'USER': 'postgres',             # Default user for PostgreSQL
+        'PASSWORD': 'password',    # Set a password if you have one
+        'HOST': 'db',                   # This refers to the name of your database service in docker-compose
+        'PORT': '5432',                 # Default PostgreSQL port
     }
 }
 

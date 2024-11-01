@@ -2,6 +2,7 @@ version: '3'
 
 services:
 
+
   web:
     build: .
     ports:
@@ -10,15 +11,24 @@ services:
       - .:/app
     depends_on:
       - db
+    networks:
+      - nat
 
   db:
-    image: postgres:17
+    image: postgres:16
     environment:
-      POSTGRES_DB: mydb
-      POSTGRES_USER: user
+      POSTGRES_DB: database
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - nat
+
 
 volumes:
   postgres_data:
+
+networks:
+  nat:
+    driver: bridge

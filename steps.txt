@@ -13,3 +13,19 @@ docker-compose logs web
 
 
 docker-compose exec web python manage.py migrate
+docker-compose exec web python manage.py migrate
+
+
+creating a superuser for database:
+docker-compose exec web python manage.py createsuperuser
+
+login as superuser :--------------
+
+username : root
+password :password
+
+
+If you’ve made any changes to your models or created new ones --------------
+docker-compose exec web python manage.py makemigrations
+docker-compose exec web python manage.py migrate
+
