@@ -1,0 +1,15 @@
+
+
+
+docker-compose up -d
+docker-compose run web django-admin startproject transcendence .
+docker-compose up -d
+
+
+
+dubagging 
+docker-compose logs web
+
+
+
+docker-compose exec web python manage.py migrate
