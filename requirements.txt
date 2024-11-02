@@ -1,2 +1,0 @@
-django
-psycopg2-binary  # For PostgreSQL database connections
