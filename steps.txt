@@ -2,7 +2,7 @@
 
 
 Create a Virtual Environment: -----------
-python3 -m venv venv
+python3 -m venv myenv
 source venv/bin/activate 
 
 
@@ -11,4 +11,5 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 
-
+python manage.py migrate
+python manage.py runserver
