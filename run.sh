@@ -1,17 +1,9 @@
 #!/bin/bash
 
-# Create virtual environment if it doesn't exist
-if [ ! -d "myenv" ]; then
-    python3 -m venv myenv
-    echo "Created virtual environment 'myenv'."
-fi
-
-# Activate the virtual environment
-source myenv/bin/activate
-
-
 
 # Install requirements
+
+pip install --upgrade pip
 pip install -r requirements.txt
 
 
@@ -39,8 +31,22 @@ docker-compose down
 docker-compose up -d
 
 # Run migrations and start the server
-python manage.py migrate
-python manage.py runserver
+python3.9 manage.py migrate
+python3.9 manage.py runserver
+
+
+
+
+
+
+
+
+
+
+
+
+
+#---------------------------------------------------
 
 
 # python3 -m venv ../myenv
