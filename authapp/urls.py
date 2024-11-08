@@ -1,10 +1,11 @@
-# authapp/urls.py
-from django.urls import path, include
 
+# authapp/urls.py
 from django.urls import path
-from .views import RegisterView, LoginView
+from .views import register, user_login, user_logout, get_user
 
 urlpatterns = [
-    path('register/', RegisterView.as_view(), name='register'),
-    path('login/', LoginView.as_view(), name='login'),
+    path('register/', register, name='register'),
+    path('login/', user_login, name='login'),
+    path('logout/', user_logout, name='logout'),
+    path('user/', get_user, name='get_user'),
 ]

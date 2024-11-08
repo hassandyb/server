@@ -31,6 +31,7 @@ docker-compose down
 docker-compose up -d
 
 # Run migrations and start the server
+python manage.py makemigrations
 python3.9 manage.py migrate
 python3.9 manage.py runserver
 
